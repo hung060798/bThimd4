@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create City</title>
+</head>
+<body>
+<h1>Create city</h1>
+<p>
+    <a href="/show">City list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create-city}" th:object="${cities}" method="post">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><input type="text" th:field="*{country}"/></td>
+        </tr>
+        <tr>
+            <td>Diện tích</td>
+            <td><input type="text" th:field="*{dienTich}"/></td>
+        </tr>
+        <tr>
+            <td>Dân số</td>
+            <td><input type="text" th:field="*{danSo}"/></td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td><input type="text" th:field="*{gdp}"/></td>
+        </tr>
+        <tr>
+            <td>Giới thiệu</td>
+            <td><input type="text" th:field="*{content}"/></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

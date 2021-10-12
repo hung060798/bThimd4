@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete city</title>
+</head>
+<body>
+<h1>Delete city</h1>
+<h2>Are you sure?</h2>
+<p>
+  <a href="/show">city list</a>
+</p>
+<form th:action="@{/delete-city}" th:object="${cities}" method="post">
+  <input th:type="hidden" name="id" th:field="*{id}">
+<!--  <table>-->
+<!--    &lt;!&ndash;private String name;&ndash;&gt;-->
+<!--    &lt;!&ndash;private String country;&ndash;&gt;-->
+<!--    &lt;!&ndash;private double dienTich;&ndash;&gt;-->
+<!--    &lt;!&ndash;private int danSo;&ndash;&gt;-->
+<!--    &lt;!&ndash;private double gdp;&ndash;&gt;-->
+<!--    &lt;!&ndash;private String content;&ndash;&gt;-->
+<!--    <tr>-->
+<!--      <td>Name</td>-->
+<!--      <td th:text="${cities.name}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Quốc Gia</td>-->
+<!--      <td th:text="${cities.country}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Diện Tích</td>-->
+<!--      <td th:text="${cities.dienTich}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Dân số</td>-->
+<!--      <td th:text="${cities.danSo}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>GDP</td>-->
+<!--      <td th:text="${cities.gdp}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Content</td>-->
+<!--      <td th:text="${cities.content}"></td>-->
+<!--    </tr>-->
+
+<!--    <tr>-->
+<!--      <td></td>-->
+<!--      <td><input type="submit" value="Delete city"></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+  <button type="submit">Delete</button>
+</form>
+</body>
+</html>

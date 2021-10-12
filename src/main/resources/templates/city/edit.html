@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit city</title>
+</head>
+<body>
+<h1>Edit city</h1>
+<p>
+  <a href="/show">CIty list</a>
+</p>
+<th:block th:if="${message}">
+  <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit-city}" th:object="${cities}" method="post">
+  <input th:type="hidden" name="id" th:field="*{id}">
+
+  <!--private String name;-->
+  <!--private String country;-->
+  <!--private double dienTich;-->
+  <!--private int danSo;-->
+  <!--private double gdp;-->
+  <!--private String content;-->
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" th:field="*{name}"/></td>
+    </tr>
+    <tr>
+      <td>Quốc Gia</td>
+      <td><input type="text" th:field="*{country}"/></td>
+    </tr>
+    <tr>
+      <tr>
+      <td>Diện tích</td>
+      <td><input type="text" th:field="*{dienTich}"/></td>
+    </tr>
+    <tr>
+      <td>Dân số</td>
+      <td><input type="text" th:field="*{danSo}"/></td>
+    </tr>
+    <tr>
+      <tr>
+      <td>GDP</td>
+      <td><input type="text" th:field="*{gdp}"/></td>
+    </tr>
+    <tr>
+      <td>Giới thiệu</td>
+      <td><input type="text" th:field="*{content}"/></td>
+    </tr>
+    <tr>
+
+      <td></td>
+      <td><input type="submit" value="Update city"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
